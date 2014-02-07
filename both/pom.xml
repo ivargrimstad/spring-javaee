@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+
+   <groupId>eu.agilejava</groupId>
+   <artifactId>both</artifactId>
+   <version>1.0-SNAPSHOT</version>
+   <packaging>war</packaging>
+
+   <name>both</name>
+
+   <properties>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <netbeans.hint.license>mit</netbeans.hint.license>    
+   </properties>
+    
+   <dependencies>
+      <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-context</artifactId>
+         <version>4.0.1.RELEASE</version>
+      </dependency>        
+      <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-web</artifactId>
+         <version>4.0.1.RELEASE</version>
+      </dependency>   
+      
+      <!-- when deploying to a Java EE 7 compliant container -->
+      <dependency>
+         <groupId>javax</groupId>
+         <artifactId>javaee-web-api</artifactId>
+         <version>7.0</version>
+         <scope>provided</scope>
+      </dependency>
+      
+      <!-- when deploying to a non Java EE 7 compliant container -->
+      <!-- test on tomcat what other settings must be used. Probably same as for pure spring... -->
+<!--      <dependency>-->
+<!--         <groupId>javax.servlet</groupId>-->
+<!--         <artifactId>javax.servlet-api</artifactId>-->
+<!--         <version>3.1.0</version>-->
+<!--      </dependency> -->
+<!--      <dependency>-->
+<!--         <groupId>javax.inject</groupId>-->
+<!--         <artifactId>javax.inject</artifactId>-->
+<!--         <version>1</version>-->
+<!--      </dependency> -->
+<!--      <dependency>-->
+<!--         <groupId>org.jboss.resteasy</groupId>-->
+<!--         <artifactId>resteasy-spring</artifactId>-->
+<!--         <version>3.0.6.Final</version>-->
+<!--      </dependency>-->
+<!--      <dependency>-->
+<!--       <groupId>org.jboss.resteasy</groupId>-->
+<!--       <artifactId>resteasy-jackson-provider</artifactId>-->
+<!--       <version>3.0.6.Final</version>-->
+<!--    </dependency>-->
+   </dependencies>
+
+   <build>
+      <plugins>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.1</version>
+            <configuration>
+               <source>1.7</source>
+               <target>1.7</target>
+            </configuration>
+         </plugin>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>2.3</version>
+            <configuration>
+               <failOnMissingWebXml>false</failOnMissingWebXml>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
+
+</project>
