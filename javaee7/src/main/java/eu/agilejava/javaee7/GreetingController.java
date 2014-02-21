@@ -19,6 +19,7 @@
 package eu.agilejava.javaee7;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -31,6 +32,7 @@ import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
  *
  * @author Ivar Grimstad <ivar.grimstad@gmail.com>
  */
+@Singleton
 @Path("greeting")
 public class GreetingController {
 
