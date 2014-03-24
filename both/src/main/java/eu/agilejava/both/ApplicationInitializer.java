@@ -38,7 +38,6 @@ public class ApplicationInitializer implements WebApplicationInitializer {
 //      servletContext.setInitParameter("resteasy.servlet.mapping.prefix", "/api");
 //      servletContext.setInitParameter("resteasy.scan", "true");
 //      servletContext.addListener(new ResteasyBootstrap());
-
       WebApplicationContext context = createWebAppContext();
       servletContext.addListener(new ContextLoaderListener(context));
 

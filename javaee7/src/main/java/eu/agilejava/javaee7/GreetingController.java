@@ -43,7 +43,7 @@ public class GreetingController {
    @GET
    @Produces(APPLICATION_JSON)
    public Greeting greet(@QueryParam("name") @DefaultValue("World") String name) {
-      
+
       return new Greeting(counter.next(), String.format(template, name));
    }
 }

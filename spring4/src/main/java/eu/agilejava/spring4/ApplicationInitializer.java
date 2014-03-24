@@ -38,11 +38,11 @@ public class ApplicationInitializer implements WebApplicationInitializer {
 
       WebApplicationContext context = createWebAppContext();
       servletContext.addListener(new ContextLoaderListener(context));
-      
+
       ServletRegistration.Dynamic registration = servletContext.addServlet("dispatcher", new DispatcherServlet(context));
       registration.setLoadOnStartup(1);
       registration.addMapping("/api/*");
-      
+
    }
 
    private WebApplicationContext createWebAppContext() {

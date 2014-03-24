@@ -49,7 +49,7 @@ public class GreetingController {
 
       return new Greeting(counter.next(), String.format(template, name));
    }
-   
+
    @PostConstruct
    private void init() {
       SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);

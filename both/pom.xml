@@ -36,26 +36,26 @@
       
       <!-- when deploying to a non Java EE 7 compliant container -->
       <!-- test on tomcat what other settings must be used. Probably same as for pure spring... -->
-<!--      <dependency>-->
-<!--         <groupId>javax.servlet</groupId>-->
-<!--         <artifactId>javax.servlet-api</artifactId>-->
-<!--         <version>3.1.0</version>-->
-<!--      </dependency> -->
-<!--      <dependency>-->
-<!--         <groupId>javax.inject</groupId>-->
-<!--         <artifactId>javax.inject</artifactId>-->
-<!--         <version>1</version>-->
-<!--      </dependency> -->
-<!--      <dependency>-->
-<!--         <groupId>org.jboss.resteasy</groupId>-->
-<!--         <artifactId>resteasy-spring</artifactId>-->
-<!--         <version>3.0.6.Final</version>-->
-<!--      </dependency>-->
-<!--      <dependency>-->
-<!--       <groupId>org.jboss.resteasy</groupId>-->
-<!--       <artifactId>resteasy-jackson-provider</artifactId>-->
-<!--       <version>3.0.6.Final</version>-->
-<!--    </dependency>-->
+      <!--      <dependency>-->
+      <!--         <groupId>javax.servlet</groupId>-->
+      <!--         <artifactId>javax.servlet-api</artifactId>-->
+      <!--         <version>3.1.0</version>-->
+      <!--      </dependency> -->
+      <!--      <dependency>-->
+      <!--         <groupId>javax.inject</groupId>-->
+      <!--         <artifactId>javax.inject</artifactId>-->
+      <!--         <version>1</version>-->
+      <!--      </dependency> -->
+      <!--      <dependency>-->
+      <!--         <groupId>org.jboss.resteasy</groupId>-->
+      <!--         <artifactId>resteasy-spring</artifactId>-->
+      <!--         <version>3.0.6.Final</version>-->
+      <!--      </dependency>-->
+      <!--      <dependency>-->
+      <!--       <groupId>org.jboss.resteasy</groupId>-->
+      <!--       <artifactId>resteasy-jackson-provider</artifactId>-->
+      <!--       <version>3.0.6.Final</version>-->
+      <!--    </dependency>-->
    </dependencies>
 
    <build>
