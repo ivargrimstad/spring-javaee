@@ -41,7 +41,7 @@ public class GreetingController {
 
    @Autowired
    private GreetingCounter counter;
-   private static final String template = "Hello, %s";
+   private static final String TEMPLATE = "Hello, %s";
 
    @GET
    @Produces(APPLICATION_JSON)
