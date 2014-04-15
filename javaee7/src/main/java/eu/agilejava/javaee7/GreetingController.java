@@ -38,12 +38,12 @@ public class GreetingController {
 
    @Inject
    private GreetingCounter counter;
-   private static final String template = "Hello, %s";
+   private static final String TEMPLATE = "Hello, %s";
 
    @GET
    @Produces(APPLICATION_JSON)
    public Greeting greet(@QueryParam("name") @DefaultValue("World") String name) {
 
-      return new Greeting(counter.next(), String.format(template, name));
+      return new Greeting(counter.next(), String.format(TEMPLATE, name));
    }
 }
