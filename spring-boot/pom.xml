@@ -12,6 +12,7 @@
    <properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <netbeans.hint.license>mit</netbeans.hint.license>    
+      <java.version>1.8</java.version>
    </properties>
     
    <parent>
