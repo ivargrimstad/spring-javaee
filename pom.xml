@@ -22,4 +22,23 @@
       <module>spring-boot</module>
    </modules>
 
+   <build>
+      <plugins>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-release-plugin</artifactId>
+            <version>2.4</version>
+            <configuration>
+               <pushChanges>false</pushChanges>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
+
+   <scm>
+      <connection>scm:git:ssh://git@bitbucket.org:ivargrimstad/spring-javaee.git</connection>
+      <developerConnection>scm:git:ssh://git@bitbucket.org:ivargrimstad/spring-javaee.git</developerConnection>
+     <tag>HEAD</tag>
+  </scm>
+
 </project>
