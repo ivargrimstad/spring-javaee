@@ -3,7 +3,7 @@
 
    <groupId>eu.agilejava</groupId>
    <artifactId>spring-javaee</artifactId>
-   <version>1.1</version>
+   <version>2.0-SNAPSHOT</version>
    <packaging>pom</packaging>
 
    <name>spring-javaee</name>
@@ -38,7 +38,7 @@
    <scm>
       <connection>scm:git:ssh://git@bitbucket.org:ivargrimstad/spring-javaee.git</connection>
       <developerConnection>scm:git:ssh://git@bitbucket.org:ivargrimstad/spring-javaee.git</developerConnection>
-     <tag>1.1</tag>
+     <tag>HEAD</tag>
   </scm>
 
 </project>
