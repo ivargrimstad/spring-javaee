@@ -34,10 +34,10 @@ public class GreetingController {
 
    @Autowired
    private GreetingCounter counter;
-   private static final String template = "Hello, %s";
+   private static final String TEMPLATE = "Hello, %s";
 
    @RequestMapping(value = "/greeting", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
    public Greeting greet(@RequestParam(value = "name", required = false, defaultValue = "World") String name) {
-      return new Greeting(counter.next(), String.format(template, name));
+      return new Greeting(counter.next(), String.format(TEMPLATE, name));
    }
 }
