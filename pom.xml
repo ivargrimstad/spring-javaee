@@ -8,8 +8,6 @@
 
    <name>spring-javaee</name>
 
-   <!-- todo add some more info -->
-
    <properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <netbeans.hint.license>mit</netbeans.hint.license>
