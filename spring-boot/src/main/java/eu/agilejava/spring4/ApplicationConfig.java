@@ -21,13 +21,11 @@ package eu.agilejava.spring4;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 
 /**
  *
  * @author Ivar Grimstad <ivar.grimstad@gmail.com>
  */
-@Configuration
 @ComponentScan
 @EnableAutoConfiguration
 public class ApplicationConfig {
