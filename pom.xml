@@ -28,6 +28,7 @@
             <version>2.4</version>
             <configuration>
                <pushChanges>false</pushChanges>
+               <tagNameFormat>@{project.version}</tagNameFormat>
             </configuration>
          </plugin>
       </plugins>
