@@ -25,6 +25,7 @@
 package eu.agilejava.javaee7.config;
 
 import eu.agilejava.spring4.SimpleSpringCounter;
+import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Produces;
 import javax.inject.Singleton;
 
@@ -35,9 +36,15 @@ import javax.inject.Singleton;
 @Singleton
 public class SimpleSpringBeanProducer {
     
+    private SimpleSpringCounter simpleSpringCounter;
+    
     @Produces
     public SimpleSpringCounter simpleSpringBean() {
-        return new SimpleSpringCounter();
+        return simpleSpringCounter;
     }
     
+    @PostConstruct
+    private void init() {
+        simpleSpringCounter = new SimpleSpringCounter();
+    }
 }
