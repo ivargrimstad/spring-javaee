@@ -33,7 +33,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class SimpleSpringCounter {
 
-    private static final AtomicLong counter = new AtomicLong();
+    private final AtomicLong counter = new AtomicLong();
 
     public SimpleSpringCounter() {
         System.out.println("NEW");
