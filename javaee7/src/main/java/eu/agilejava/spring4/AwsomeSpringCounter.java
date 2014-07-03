@@ -1,4 +1,4 @@
-/**
+/*
  * The MIT License
  *
  * Copyright 2014 Ivar Grimstad <ivar.grimstad@gmail.com>.
@@ -18,30 +18,27 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
  */
-package eu.agilejava.javaee7;
+
+package eu.agilejava.spring4;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author Ivar Grimstad <ivar.grimstad@gmail.com>
  */
-public class Greeting {
-
-    private final String content;
-    private final long count;
-
-    public Greeting(long id, String content) {
-        this.count = id;
-        this.content = content;
+@Component
+public class AwsomeSpringCounter {
+    
+    @Autowired
+    private SimpleSpringCounter simpleSpringCounter;
+    
+      public long next() {
+        return simpleSpringCounter.next();
     }
-
-    public long getCount() {
-        return count;
-    }
-
-    public String getContent() {
-        return content;
-    }
+    
 }

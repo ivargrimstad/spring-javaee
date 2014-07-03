@@ -39,7 +39,7 @@ public class SimpleSpringCounter {
         System.out.println("NEW");
     }
     
-    public long simpleCount() {
+    public long next() {
         return counter.incrementAndGet();
     }
 }

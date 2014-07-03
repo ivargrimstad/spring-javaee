@@ -23,6 +23,7 @@
  */
 package eu.agilejava.javaee7;
 
+import eu.agilejava.spring4.AwsomeSpringCounter;
 import eu.agilejava.spring4.SimpleSpringCounter;
 import javax.inject.Inject;
 import javax.ws.rs.DefaultValue;
@@ -46,14 +47,18 @@ public class GreetingController {
     private GreetingCounter counter;
 
     @Inject
-    private SimpleSpringCounter simpleSpringBean;
+    private SimpleSpringCounter simpleSpringCounter;
+
+//    @Inject
+//    private AwsomeSpringCounter awsomeSpringCounter;
 
     @GET
     @Produces(APPLICATION_JSON)
     public Greeting greet(@QueryParam("name") @DefaultValue("World") String name) {
 
-//      return new Greeting(counter.next(), String.format(TEMPLATE, name));
-        return new Greeting(simpleSpringBean.simpleCount(), String.format(TEMPLATE, name));
+//        return new Greeting(counter.next(), String.format(TEMPLATE, name));
+        return new Greeting(simpleSpringCounter.next(), String.format(TEMPLATE, name));
+//        return new Greeting(awsomeSpringCounter.next(), String.format(TEMPLATE, name));
 
     }
 }
