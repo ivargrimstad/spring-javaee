@@ -36,32 +36,32 @@ import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
  */
 @Path("greeting")
 public class GreetingController {
-   
+
    private static final Logger LOGGER = Logger.getLogger("JAVAEE7");
-   
+
    private static final String TEMPLATE = "Hello, %s";
-   
+
    @Inject
    private GreetingCounter counter;
-   
+
    @Inject
    private SimpleSpringCounter simpleSpringCounter;
 
-//    @Inject
+   @Inject
    private AwsomeSpringCounter awsomeSpringCounter;
-   
+
    @GET
    @Produces(APPLICATION_JSON)
    public Greeting greet(@QueryParam("name") @DefaultValue("World") String name) {
-      
+
       Greeting greeting = new Greeting(counter.next(), String.format(TEMPLATE, name));
-      
+
       greeting.setSimpleCount(simpleSpringCounter.next());
-//        greeting.setAwsomeCount(awsomeSpringCounter.next());
+      greeting.setAwsomeCount(awsomeSpringCounter.next());
 
       return greeting;
    }
-   
+
    public GreetingController() {
       LOGGER.fine(() -> this.getClass().getSimpleName() + " created");
    }

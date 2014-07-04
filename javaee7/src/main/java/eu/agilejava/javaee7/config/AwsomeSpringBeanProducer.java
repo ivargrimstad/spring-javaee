@@ -23,12 +23,14 @@
  */
 package eu.agilejava.javaee7.config;
 
+import eu.agilejava.spring4.ApplicationConfig;
 import eu.agilejava.spring4.AwsomeSpringCounter;
 import eu.agilejava.spring4.SimpleSpringCounter;
 import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Produces;
 import javax.inject.Singleton;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
  *
@@ -39,18 +41,29 @@ public class AwsomeSpringBeanProducer {
 
    private static final Logger LOGGER = Logger.getLogger("JAVAEE7");
 
-//   private SimpleSpringCounter simpleSpringCounter;
+   private AnnotationConfigApplicationContext ctx;
+
    public AwsomeSpringBeanProducer() {
       LOGGER.info(() -> this.getClass().getSimpleName() + " created");
    }
 
    @Produces
    public AwsomeSpringCounter awsomeCounter() {
-      return null;
+
+      LOGGER.info(() -> this.getClass().getSimpleName() + " procuding awsomeCounter");
+
+      return ctx.getBean(AwsomeSpringCounter.class);
    }
 
    @PostConstruct
    private void init() {
-//      simpleSpringCounter = new SimpleSpringCounter();
+      LOGGER.info(() -> this.getClass().getSimpleName() + " init start");
+
+      ctx = new AnnotationConfigApplicationContext();
+      ctx.register(ApplicationConfig.class);
+      ctx.refresh();
+
+      LOGGER.info(() -> this.getClass().getSimpleName() + " init end");
+
    }
 }
