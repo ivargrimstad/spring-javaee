@@ -23,6 +23,7 @@
  */
 package eu.agilejava.javaee7.config;
 
+import eu.agilejava.spring4.AwsomeSpringCounter;
 import eu.agilejava.spring4.SimpleSpringCounter;
 import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
@@ -34,23 +35,22 @@ import javax.inject.Singleton;
  * @author ivar.grimstad
  */
 @Singleton
-public class SimpleSpringBeanProducer {
-
-   private SimpleSpringCounter simpleSpringCounter;
+public class AwsomeSpringBeanProducer {
 
    private static final Logger LOGGER = Logger.getLogger("JAVAEE7");
 
-   public SimpleSpringBeanProducer() {
+//   private SimpleSpringCounter simpleSpringCounter;
+   public AwsomeSpringBeanProducer() {
       LOGGER.info(() -> this.getClass().getSimpleName() + " created");
    }
 
    @Produces
-   public SimpleSpringCounter simpleCounter() {
-      return simpleSpringCounter;
+   public AwsomeSpringCounter awsomeCounter() {
+      return null;
    }
 
    @PostConstruct
    private void init() {
-      simpleSpringCounter = new SimpleSpringCounter();
+//      simpleSpringCounter = new SimpleSpringCounter();
    }
 }

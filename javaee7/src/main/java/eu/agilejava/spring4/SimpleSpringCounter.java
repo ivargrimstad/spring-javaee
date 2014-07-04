@@ -39,7 +39,7 @@ public class SimpleSpringCounter {
    private final AtomicLong counter = new AtomicLong();
 
    public SimpleSpringCounter() {
-      LOGGER.info(() -> "SimpleSpringCounter created");
+      LOGGER.info(() -> this.getClass().getSimpleName() + " created");
    }
 
    public long next() {

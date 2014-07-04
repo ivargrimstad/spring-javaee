@@ -63,6 +63,6 @@ public class GreetingController {
    }
    
    public GreetingController() {
-      LOGGER.info(() -> "GreetingController created");
+      LOGGER.fine(() -> this.getClass().getSimpleName() + " created");
    }
 }

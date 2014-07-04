@@ -18,6 +18,7 @@
  */
 package eu.agilejava.javaee7.config;
 
+import java.util.logging.Logger;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
@@ -27,4 +28,10 @@ import javax.ws.rs.core.Application;
  */
 @ApplicationPath("api")
 public class ApplicationConfig extends Application {
+
+   private static final Logger LOGGER = Logger.getLogger("JAVAEE7");
+
+   public ApplicationConfig() {
+      LOGGER.info(() -> this.getClass().getSimpleName() + " created");
+   }
 }

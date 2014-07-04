@@ -40,7 +40,7 @@ public class AwsomeSpringCounter {
    private SimpleSpringCounter simpleSpringCounter;
 
    public AwsomeSpringCounter() {
-      LOGGER.info(() -> "AwsomeSpringCounter created");
+      LOGGER.info(() -> this.getClass().getSimpleName() + " created");
    }
 
    public long next() {

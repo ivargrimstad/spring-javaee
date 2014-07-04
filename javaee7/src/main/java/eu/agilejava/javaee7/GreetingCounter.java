@@ -16,7 +16,7 @@ public class GreetingCounter {
    private final AtomicLong counter = new AtomicLong();
    
    public GreetingCounter() {
-      LOGGER.info(() -> "GreetingCounter created");
+      LOGGER.info(() -> this.getClass().getSimpleName() + " created");
    }
    
    public long next() {
