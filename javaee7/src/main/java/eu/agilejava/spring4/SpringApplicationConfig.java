@@ -21,10 +21,9 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-
 package eu.agilejava.spring4;
 
-import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -32,16 +31,6 @@ import org.springframework.context.annotation.Configuration;
  * @author Ivar Grimstad <ivar.grimstad@gmail.com>
  */
 @Configuration
-public class ApplicationConfig {
-   
-   @Bean
-   public SimpleSpringCounter simpleSpringCounter() {
-      return new SimpleSpringCounter();
-   }
-   
-   @Bean
-   public AwsomeSpringCounter awsomeSpringCounter() {
-      return new AwsomeSpringCounter();
-   } 
-   
+@ComponentScan("eu.agilejava.spring4")
+public class SpringApplicationConfig {
 }

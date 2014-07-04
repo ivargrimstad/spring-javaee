@@ -23,7 +23,7 @@
  */
 package eu.agilejava.javaee7.config;
 
-import eu.agilejava.spring4.ApplicationConfig;
+import eu.agilejava.spring4.SpringApplicationConfig;
 import eu.agilejava.spring4.AwsomeSpringCounter;
 import eu.agilejava.spring4.SimpleSpringCounter;
 import java.util.logging.Logger;
@@ -60,7 +60,7 @@ public class AwsomeSpringBeanProducer {
       LOGGER.info(() -> this.getClass().getSimpleName() + " init start");
 
       ctx = new AnnotationConfigApplicationContext();
-      ctx.register(ApplicationConfig.class);
+      ctx.register(SpringApplicationConfig.class);
       ctx.refresh();
 
       LOGGER.info(() -> this.getClass().getSimpleName() + " init end");
