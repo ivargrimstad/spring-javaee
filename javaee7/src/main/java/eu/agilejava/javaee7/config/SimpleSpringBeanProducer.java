@@ -21,7 +21,6 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-
 package eu.agilejava.javaee7.config;
 
 import eu.agilejava.spring4.SimpleSpringCounter;
@@ -35,16 +34,16 @@ import javax.inject.Singleton;
  */
 @Singleton
 public class SimpleSpringBeanProducer {
-    
-    private SimpleSpringCounter simpleSpringCounter;
-    
-    @Produces
-    public SimpleSpringCounter simpleSpringBean() {
-        return simpleSpringCounter;
-    }
-    
-    @PostConstruct
-    private void init() {
-        simpleSpringCounter = new SimpleSpringCounter();
-    }
+
+   private SimpleSpringCounter simpleSpringCounter;
+
+   @Produces
+   public SimpleSpringCounter simpleSpringBean() {
+      return simpleSpringCounter;
+   }
+
+   @PostConstruct
+   private void init() {
+      simpleSpringCounter = new SimpleSpringCounter();
+   }
 }

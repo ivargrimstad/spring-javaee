@@ -24,6 +24,7 @@
 package eu.agilejava.spring4;
 
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.logging.Logger;
 import org.springframework.stereotype.Component;
 
 /**
@@ -33,13 +34,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class SimpleSpringCounter {
 
-    private final AtomicLong counter = new AtomicLong();
+   private static final Logger LOGGER = Logger.getLogger("SPRING4");
 
-    public SimpleSpringCounter() {
-        System.out.println("NEW");
-    }
-    
-    public long next() {
-        return counter.incrementAndGet();
-    }
+   private final AtomicLong counter = new AtomicLong();
+
+   public SimpleSpringCounter() {
+      LOGGER.info(() -> "SimpleSpringCounter created");
+   }
+
+   public long next() {
+      return counter.incrementAndGet();
+   }
 }

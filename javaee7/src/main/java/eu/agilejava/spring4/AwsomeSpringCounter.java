@@ -21,9 +21,9 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-
 package eu.agilejava.spring4;
 
+import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -33,12 +33,18 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class AwsomeSpringCounter {
-    
-    @Autowired
-    private SimpleSpringCounter simpleSpringCounter;
-    
-      public long next() {
-        return simpleSpringCounter.next();
-    }
-    
+
+   private static final Logger LOGGER = Logger.getLogger("SPRING4");
+
+   @Autowired
+   private SimpleSpringCounter simpleSpringCounter;
+
+   public AwsomeSpringCounter() {
+      LOGGER.info(() -> "AwsomeSpringCounter created");
+   }
+
+   public long next() {
+      return simpleSpringCounter.next();
+   }
+
 }
