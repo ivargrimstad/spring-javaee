@@ -25,7 +25,6 @@ package eu.agilejava.javaee7.config;
 
 import eu.agilejava.spring4.SpringApplicationConfig;
 import eu.agilejava.spring4.AwsomeSpringCounter;
-import eu.agilejava.spring4.SimpleSpringCounter;
 import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Produces;
@@ -34,7 +33,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 /**
  *
- * @author ivar.grimstad
+ * @author ivar.grimstad <ivar.grimstad@gmail.com>
  */
 @Singleton
 public class AwsomeSpringBeanProducer {
@@ -62,8 +61,5 @@ public class AwsomeSpringBeanProducer {
       ctx = new AnnotationConfigApplicationContext();
       ctx.register(SpringApplicationConfig.class);
       ctx.refresh();
-
-      LOGGER.info(() -> this.getClass().getSimpleName() + " init end");
-
    }
 }

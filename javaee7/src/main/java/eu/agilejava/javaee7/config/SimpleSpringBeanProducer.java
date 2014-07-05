@@ -31,14 +31,14 @@ import javax.inject.Singleton;
 
 /**
  *
- * @author ivar.grimstad
+ * @author ivar.grimstad <ivar.grimstad@gmail.com>
  */
 @Singleton
 public class SimpleSpringBeanProducer {
 
-   private SimpleSpringCounter simpleSpringCounter;
-
    private static final Logger LOGGER = Logger.getLogger("JAVAEE7");
+
+   private SimpleSpringCounter simpleSpringCounter;
 
    public SimpleSpringBeanProducer() {
       LOGGER.info(() -> this.getClass().getSimpleName() + " created");
@@ -51,6 +51,7 @@ public class SimpleSpringBeanProducer {
 
    @PostConstruct
    private void init() {
+      LOGGER.info(() -> this.getClass().getSimpleName() + " init");
       simpleSpringCounter = new SimpleSpringCounter();
    }
 }
