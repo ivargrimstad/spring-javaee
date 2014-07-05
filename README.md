@@ -7,7 +7,7 @@ but if you are looking for something in particular you may need to check out one
 are described below.
 
 Current
------------
+-------
 This version contains the code accompanying presentations from Q3 and forward
 - both contains the Spring4, Java EE 7 combined approach
 - javaee7 contains the plain Java EE 7 approach
