@@ -17,7 +17,6 @@
       <module>both</module>
       <module>javaee7</module>
       <module>spring4</module>
-      <module>spring-boot</module>
    </modules>
 
    <build>
