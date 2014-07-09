@@ -14,9 +14,10 @@
    </properties>
    
    <modules>
-      <module>both</module>
       <module>javaee7</module>
       <module>spring4</module>
+      <module>javaee-component</module>
+      <module>spring-component</module>
    </modules>
 
    <build>
