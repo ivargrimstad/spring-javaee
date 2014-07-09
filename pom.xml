@@ -14,9 +14,9 @@
    </properties>
    
    <modules>
-      <module>javaee7</module>
-      <module>spring4</module>
+      <module>javaee-application</module>
       <module>javaee-component</module>
+      <module>spring-application</module>
       <module>spring-component</module>
    </modules>
 
