@@ -10,9 +10,10 @@ Current
 -------
 This version contains the code accompanying presentations from Q3 and forward
 
-- both contains the Spring4, Java EE 7 combined approach
-- javaee7 contains the plain Java EE 7 approach
-- spring4 contains the plain Spring 4 approach
+- javaee-application contains the Java EE 7 application
+- spring-application contains the Spring 4 application
+- javaee-component contains the Java EE 7 component used by the Spring 4 application
+- spring-component contains the Spring 4 component used by the Java EE 7 application
 
 Version 2.0
 -----------
