@@ -24,19 +24,37 @@ package eu.agilejava.spring4;
  */
 public class Greeting {
 
-   private final long id;
    private final String content;
+   private final long count;
+   private long simpleCount;
+   private long awsomeCount;
 
    public Greeting(long id, String content) {
-      this.id = id;
+      this.count = id;
       this.content = content;
    }
 
-   public long getId() {
-      return id;
+   public long getCount() {
+      return count;
    }
 
    public String getContent() {
       return content;
+   }
+
+   public long getSimpleCount() {
+      return simpleCount;
+   }
+
+   public void setSimpleCount(long simpleCount) {
+      this.simpleCount = simpleCount;
+   }
+
+   public long getAwsomeCount() {
+      return awsomeCount;
+   }
+
+   public void setAwsomeCount(long awsomeCount) {
+      this.awsomeCount = awsomeCount;
    }
 }

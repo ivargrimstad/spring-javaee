@@ -18,6 +18,9 @@
  */
 package eu.agilejava.spring4;
 
+import eu.agilejava.javaee7.AwsomeJavaEECounter;
+import eu.agilejava.javaee7.SimpleJavaEECounter;
+import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -33,12 +36,31 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RestController
 public class GreetingController {
 
+   private static final Logger LOGGER = Logger.getLogger("SPRING4");
+
+   private static final String TEMPLATE = "Hello, %s";
+
    @Autowired
    private GreetingCounter counter;
-   private static final String TEMPLATE = "Hello, %s";
+   
+   @Autowired
+   private SimpleJavaEECounter simpleJavaEECounter;
+   
+   @Autowired
+   private AwsomeJavaEECounter awsomeJavaEECounter;
 
    @RequestMapping(value = "/greeting", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
    public Greeting greet(@RequestParam(value = "name", required = false, defaultValue = "World") String name) {
-      return new Greeting(counter.next(), String.format(TEMPLATE, name));
+
+      Greeting greeting = new Greeting(counter.next(), String.format(TEMPLATE, name));
+
+      greeting.setSimpleCount(simpleJavaEECounter.next());
+      greeting.setAwsomeCount(awsomeJavaEECounter.next());
+      
+      return greeting;
+   }
+
+   public GreetingController() {
+      LOGGER.fine(() -> this.getClass().getSimpleName() + " created");
    }
 }

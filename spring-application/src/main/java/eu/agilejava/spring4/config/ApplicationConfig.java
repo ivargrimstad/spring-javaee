@@ -16,8 +16,11 @@
  * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
  * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package eu.agilejava.spring4;
+package eu.agilejava.spring4.config;
 
+import eu.agilejava.javaee7.AwsomeJavaEECounter;
+import eu.agilejava.javaee7.SimpleJavaEECounter;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -31,4 +34,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @ComponentScan("eu.agilejava.spring4")
 @EnableWebMvc
 public class ApplicationConfig extends WebMvcConfigurerAdapter {
+   
+   @Bean
+   public SimpleJavaEECounter simpleJavaEECounter() {
+      return new SimpleJavaEECounter();
+   }
+   
+   @Bean
+   public AwsomeJavaEECounter awsomeJavaEECounter() {
+      return new AwsomeJavaEECounter();
+   }
 }
