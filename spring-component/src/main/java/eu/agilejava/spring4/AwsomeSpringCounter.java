@@ -23,8 +23,10 @@
  */
 package eu.agilejava.spring4;
 
+import java.util.Arrays;
 import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 /**
@@ -39,12 +41,17 @@ public class AwsomeSpringCounter {
    @Autowired
    private SimpleSpringCounter simpleSpringCounter;
 
+   @Autowired
+   private ApplicationContext appContext;
+
    public AwsomeSpringCounter() {
       LOGGER.info(() -> this.getClass().getSimpleName() + " created");
    }
 
    public long next() {
+
+      Arrays.asList(appContext.getBeanDefinitionNames()).forEach(n -> LOGGER.info(() -> "Bean: " + n));
+
       return simpleSpringCounter.next();
    }
-
 }
