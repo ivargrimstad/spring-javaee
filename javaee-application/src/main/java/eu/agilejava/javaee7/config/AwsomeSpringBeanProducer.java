@@ -49,7 +49,7 @@ public class AwsomeSpringBeanProducer {
    @Produces
    public AwsomeSpringCounter awsomeCounter() {
 
-      LOGGER.info(() -> this.getClass().getSimpleName() + " procuding awsomeCounter");
+      LOGGER.info(() -> this.getClass().getSimpleName() + " producing awsomeCounter");
 
       return ctx.getBean(AwsomeSpringCounter.class);
    }
