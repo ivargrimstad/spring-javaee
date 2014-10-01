@@ -34,7 +34,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @ComponentScan("eu.agilejava.spring4")
 @EnableWebMvc
 public class ApplicationConfig extends WebMvcConfigurerAdapter {
-   
+
    @Bean
    public SimpleJavaEECounter simpleJavaEECounter() {
       return new SimpleJavaEECounter();

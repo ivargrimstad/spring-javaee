@@ -21,6 +21,7 @@ package eu.agilejava.spring4;
 import eu.agilejava.javaee7.AwsomeJavaEECounter;
 import eu.agilejava.javaee7.SimpleJavaEECounter;
 import java.util.logging.Logger;
+import javax.ejb.EJB;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -46,8 +47,10 @@ public class GreetingController {
    @Autowired
    private SimpleJavaEECounter simpleJavaEECounter;
    
-   @Autowired
+//   @Autowired
+   @EJB(mappedName = "java:module/AwsomeJavaEECounter")
    private AwsomeJavaEECounter awsomeJavaEECounter;
+ 
 
    @RequestMapping(value = "/greeting", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
    public Greeting greet(@RequestParam(value = "name", required = false, defaultValue = "World") String name) {
