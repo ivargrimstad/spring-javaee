@@ -50,9 +50,17 @@ public class AwsomeSpringBeanProducer {
    public AwsomeSpringCounter awsomeCounter() {
 
       LOGGER.info(() -> this.getClass().getSimpleName() + " producing awsomeCounter");
-
       return ctx.getBean(AwsomeSpringCounter.class);
    }
+
+/**
+   @Produces
+   public SimpleSpringCounter simpleCounter() {
+
+      LOGGER.info(() -> this.getClass().getSimpleName() + " producing simpleCounter");
+      return ctx.getBean(SimpleSpringCounter.class);
+   }
+*/
 
    @PostConstruct
    private void init() {
