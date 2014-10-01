@@ -11,7 +11,7 @@ import javax.inject.Singleton;
 @Singleton
 public class GreetingCounter {
    
-   private static final Logger LOGGER = Logger.getLogger("JAVAEE7");
+   private static final Logger LOGGER = Logger.getLogger("Java EE 7 Application");
    
    private final AtomicLong counter = new AtomicLong();
    

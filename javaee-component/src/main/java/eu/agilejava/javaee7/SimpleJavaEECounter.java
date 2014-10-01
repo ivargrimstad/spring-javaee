@@ -13,7 +13,7 @@ import javax.inject.Singleton;
 @Singleton
 public class SimpleJavaEECounter {
    
-   private static final Logger LOGGER = Logger.getLogger("JAVAEE7");
+   private static final Logger LOGGER = Logger.getLogger("Jave EE 7 Component");
    
    private final AtomicLong counter = new AtomicLong();
    

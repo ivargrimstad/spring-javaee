@@ -36,7 +36,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RestController
 public class GreetingController {
 
-   private static final Logger LOGGER = Logger.getLogger("SPRING4");
+   private static final Logger LOGGER = Logger.getLogger("Spring 4 Application");
 
    private static final String TEMPLATE = "Hello, %s";
 

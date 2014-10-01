@@ -34,7 +34,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class SimpleSpringCounter {
 
-   private static final Logger LOGGER = Logger.getLogger("SPRING4");
+   private static final Logger LOGGER = Logger.getLogger("Spring 4 Component");
 
    private final AtomicLong counter = new AtomicLong();
 

@@ -37,7 +37,7 @@ import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 @Path("greeting")
 public class GreetingController {
 
-   private static final Logger LOGGER = Logger.getLogger("JAVAEE7");
+   private static final Logger LOGGER = Logger.getLogger("Java EE 7 Application");
 
    private static final String TEMPLATE = "Hello, %s";
 

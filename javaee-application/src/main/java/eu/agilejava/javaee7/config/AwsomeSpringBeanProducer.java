@@ -38,12 +38,12 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 @Singleton
 public class AwsomeSpringBeanProducer {
 
-   private static final Logger LOGGER = Logger.getLogger("JAVAEE7");
+   private static final Logger LOGGER = Logger.getLogger("Java EE 7 Application");
 
    private AnnotationConfigApplicationContext ctx;
 
    public AwsomeSpringBeanProducer() {
-      LOGGER.info(() -> this.getClass().getSimpleName() + " created");
+      LOGGER.fine(() -> this.getClass().getSimpleName() + " created");
    }
 
    @Produces

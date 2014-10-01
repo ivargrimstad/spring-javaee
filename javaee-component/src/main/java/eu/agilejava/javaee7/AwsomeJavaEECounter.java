@@ -34,7 +34,7 @@ import javax.inject.Singleton;
 @Singleton
 public class AwsomeJavaEECounter {
 
-   private static final Logger LOGGER = Logger.getLogger("JAVAEE7");
+   private static final Logger LOGGER = Logger.getLogger("Java EE 7 Component");
 
    @Inject
    private SimpleJavaEECounter simpleJavaEECounter;

@@ -29,7 +29,7 @@ import javax.ws.rs.core.Application;
 @ApplicationPath("api")
 public class ApplicationConfig extends Application {
 
-   private static final Logger LOGGER = Logger.getLogger("JAVAEE7");
+   private static final Logger LOGGER = Logger.getLogger("Java EE 7 Application");
 
    public ApplicationConfig() {
       LOGGER.info(() -> this.getClass().getSimpleName() + " created");

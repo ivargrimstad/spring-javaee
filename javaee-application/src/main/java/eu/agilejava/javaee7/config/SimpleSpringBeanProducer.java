@@ -36,7 +36,7 @@ import javax.inject.Singleton;
 @Singleton
 public class SimpleSpringBeanProducer {
 
-   private static final Logger LOGGER = Logger.getLogger("JAVAEE7");
+   private static final Logger LOGGER = Logger.getLogger("Java EE 7 Application");
 
    private SimpleSpringCounter simpleSpringCounter;
 

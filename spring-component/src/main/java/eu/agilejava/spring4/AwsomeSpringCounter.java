@@ -36,7 +36,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class AwsomeSpringCounter {
 
-   private static final Logger LOGGER = Logger.getLogger("SPRING4");
+   private static final Logger LOGGER = Logger.getLogger("Spring 4 Component");
 
    @Autowired
    private SimpleSpringCounter simpleSpringCounter;
