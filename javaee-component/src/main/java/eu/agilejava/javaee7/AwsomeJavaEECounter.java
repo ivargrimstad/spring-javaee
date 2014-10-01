@@ -24,14 +24,14 @@
 package eu.agilejava.javaee7;
 
 import java.util.logging.Logger;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
-import javax.inject.Singleton;
 
 /**
  *
  * @author Ivar Grimstad <ivar.grimstad@gmail.com>
  */
-@Singleton
+@Stateless
 public class AwsomeJavaEECounter {
 
    private static final Logger LOGGER = Logger.getLogger("Java EE 7 Component");
@@ -46,5 +46,4 @@ public class AwsomeJavaEECounter {
    public long next() {
       return simpleJavaEECounter.next();
    }
-
 }
