@@ -42,10 +42,19 @@ public class AwsomeSpringBeanProducer {
 
    private AnnotationConfigApplicationContext ctx;
 
+   /**
+    * Creates an instance of AwsomeSpringBeanProducer.
+    */
    public AwsomeSpringBeanProducer() {
       LOGGER.fine(() -> this.getClass().getSimpleName() + " created");
    }
 
+   /**
+    * Produces an AwsomeSpringCounter.
+    * Retrieves the AwsomeSpringCounterBean from spring context.
+    * 
+    * @return The Spring Bean instance of AwsomeSpringCounter 
+    */
    @Produces
    public AwsomeSpringCounter awsomeCounter() {
 

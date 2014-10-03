@@ -34,15 +34,15 @@ import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
  *
  * @author Ivar Grimstad <ivar.grimstad@gmail.com>
  */
-@Path("greeting")
-public class GreetingController {
+@Path("count")
+public class CountResource {
 
    private static final Logger LOGGER = Logger.getLogger("Java EE 7 Application");
 
    private static final String TEMPLATE = "Hello, %s";
 
    @Inject
-   private GreetingCounter counter;
+   private Counter counter;
 
    @Inject
    private SimpleSpringCounter simpleSpringCounter;
@@ -50,19 +50,27 @@ public class GreetingController {
    @Inject
    private AwsomeSpringCounter awsomeSpringCounter;
 
+   /**
+    *
+    * @param name
+    * @return
+    */
    @GET
    @Produces(APPLICATION_JSON)
-   public Greeting greet(@QueryParam("name") @DefaultValue("World") String name) {
+   public Count greet(@QueryParam("name") @DefaultValue("World") String name) {
 
-      Greeting greeting = new Greeting(counter.next(), String.format(TEMPLATE, name));
+      Count count = new Count(String.format(TEMPLATE, name));
+      count.setCount(counter.next());
+      count.setSimpleCount(simpleSpringCounter.next());
+      count.setAwsomeCount(awsomeSpringCounter.next());
 
-      greeting.setSimpleCount(simpleSpringCounter.next());
-      greeting.setAwsomeCount(awsomeSpringCounter.next());
-
-      return greeting;
+      return count;
    }
 
-   public GreetingController() {
+   /**
+    * Creates a CountResource.
+    */
+   public CountResource() {
       LOGGER.fine(() -> this.getClass().getSimpleName() + " created");
    }
 }

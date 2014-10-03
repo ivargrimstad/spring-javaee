@@ -40,10 +40,18 @@ public class SimpleSpringBeanProducer {
 
    private SimpleSpringCounter simpleSpringCounter;
 
+   /**
+    * Creates an instance of SimpleSpringBeanProducer.
+    */
    public SimpleSpringBeanProducer() {
       LOGGER.info(() -> this.getClass().getSimpleName() + " created");
    }
 
+   /**
+    * Produces an instance of SimpleSpringCounter.
+    * 
+    * @return The an instance of SimpleSpringCounter managed by this app's context.
+    */
    @Produces
    public SimpleSpringCounter simpleCounter() {
       return simpleSpringCounter;

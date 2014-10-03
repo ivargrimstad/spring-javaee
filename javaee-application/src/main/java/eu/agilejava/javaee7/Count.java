@@ -22,31 +22,34 @@ package eu.agilejava.javaee7;
  *
  * @author Ivar Grimstad <ivar.grimstad@gmail.com>
  */
-public class Greeting {
+public class Count {
 
-   private final String content;
-   private final long count;
+   private final String message;
+   private long count;
    private long simpleCount;
    private long awsomeCount;
 
-   public Greeting(long id, String content) {
-      this.count = id;
-      this.content = content;
+   public Count(String content) {
+      this.message = content;
+   }
+
+   public String getMessage() {
+      return message;
    }
 
    public long getCount() {
       return count;
    }
 
-   public String getContent() {
-      return content;
+   public void setCount(final long count) {
+      this.count = count;
    }
-
+   
    public long getSimpleCount() {
       return simpleCount;
    }
 
-   public void setSimpleCount(long simpleCount) {
+   public void setSimpleCount(final long simpleCount) {
       this.simpleCount = simpleCount;
    }
 
@@ -54,7 +57,7 @@ public class Greeting {
       return awsomeCount;
    }
 
-   public void setAwsomeCount(long awsomeCount) {
+   public void setAwsomeCount(final long awsomeCount) {
       this.awsomeCount = awsomeCount;
    }
 }

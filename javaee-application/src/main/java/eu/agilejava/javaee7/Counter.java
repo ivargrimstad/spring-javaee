@@ -9,16 +9,23 @@ import javax.inject.Singleton;
  * @author Ivar Grimstad (ivar.grimstad@gmail.com)
  */
 @Singleton
-public class GreetingCounter {
+public class Counter {
    
    private static final Logger LOGGER = Logger.getLogger("Java EE 7 Application");
    
    private final AtomicLong counter = new AtomicLong();
-   
-   public GreetingCounter() {
+
+   /**
+    * Creates a counter.
+    */
+   public Counter() {
       LOGGER.info(() -> this.getClass().getSimpleName() + " created");
    }
    
+   /**
+    * Retrieves the next number.
+    * @return the next count
+    */
    public long next() {
       return counter.incrementAndGet();
    }

@@ -31,6 +31,9 @@ public class ApplicationConfig extends Application {
 
    private static final Logger LOGGER = Logger.getLogger("Java EE 7 Application");
 
+   /**
+    * Creates an instance of ApplicationConfig.
+    */
    public ApplicationConfig() {
       LOGGER.info(() -> this.getClass().getSimpleName() + " created");
    }
