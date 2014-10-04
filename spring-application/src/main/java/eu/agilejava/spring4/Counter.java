@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  * @author Ivar Grimstad (ivar.grimstad@gmail.com)
  */
 @Component
-public class GreetingCounter {
+public class Counter {
 
    private final AtomicLong counter = new AtomicLong();
 

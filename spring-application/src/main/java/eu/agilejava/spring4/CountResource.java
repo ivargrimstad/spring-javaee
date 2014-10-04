@@ -35,14 +35,14 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
  * @author Ivar Grimstad <ivar.grimstad@gmail.com>
  */
 @RestController
-public class GreetingController {
+public class CountResource {
 
    private static final Logger LOGGER = Logger.getLogger("Spring 4 Application");
 
    private static final String TEMPLATE = "Hello, %s";
 
    @Autowired
-   private GreetingCounter counter;
+   private Counter counter;
    
    @Autowired
    private SimpleJavaEECounter simpleJavaEECounter;
@@ -52,18 +52,18 @@ public class GreetingController {
    private AwsomeJavaEECounter awsomeJavaEECounter;
  
 
-   @RequestMapping(value = "/greeting", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
-   public Greeting greet(@RequestParam(value = "name", required = false, defaultValue = "World") String name) {
+   @RequestMapping(value = "/count", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
+   public Count greet(@RequestParam(value = "name", required = false, defaultValue = "World") String name) {
 
-      Greeting greeting = new Greeting(counter.next(), String.format(TEMPLATE, name));
-
-      greeting.setSimpleCount(simpleJavaEECounter.next());
-      greeting.setAwsomeCount(awsomeJavaEECounter.next());
+      Count count = new Count(String.format(TEMPLATE, name));
+      count.setCount(counter.next());
+      count.setSimpleCount(simpleJavaEECounter.next());
+      count.setAwsomeCount(awsomeJavaEECounter.next());
       
-      return greeting;
+      return count;
    }
 
-   public GreetingController() {
+   public CountResource() {
       LOGGER.fine(() -> this.getClass().getSimpleName() + " created");
    }
 }
