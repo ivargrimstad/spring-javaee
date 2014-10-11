@@ -41,7 +41,7 @@ public class AwsomeSpringBeanProducer {
    private static final Logger LOGGER = Logger.getLogger("Java EE 7 Application");
 
    private AnnotationConfigApplicationContext ctx;
-
+   
    /**
     * Creates an instance of AwsomeSpringBeanProducer.
     */
