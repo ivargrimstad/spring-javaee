@@ -57,7 +57,7 @@ public class CountResource {
     */
    @GET
    @Produces(APPLICATION_JSON)
-   public Count greet(@QueryParam("name") @DefaultValue("World") String name) {
+   public Count count(@QueryParam("name") @DefaultValue("World") String name) {
 
       Count count = new Count(String.format(TEMPLATE, name));
       count.setCount(counter.next());
