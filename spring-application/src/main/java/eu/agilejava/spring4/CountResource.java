@@ -50,10 +50,9 @@ public class CountResource {
 //   @Autowired
    @EJB(mappedName = "java:module/AwsomeJavaEECounter")
    private AwsomeJavaEECounter awsomeJavaEECounter;
- 
 
    @RequestMapping(value = "/count", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
-   public Count greet(@RequestParam(value = "name", required = false, defaultValue = "World") String name) {
+   public Count count(@RequestParam(value = "name", required = false, defaultValue = "World") String name) {
 
       Count count = new Count(String.format(TEMPLATE, name));
       count.setCount(counter.next());
