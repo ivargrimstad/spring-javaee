@@ -33,14 +33,16 @@ import javax.inject.Singleton;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
- *
+ * Spring bean producer.
+ * Shows how to make beans managed by Spring be available to CDI.
+ * 
  * @author ivar.grimstad <ivar.grimstad@gmail.com>
  */
 @Singleton
 public class SpringBeanProducer {
 
    private static final Logger LOGGER = Logger.getLogger("Java EE 7 Application");
-
+   
    private final SimpleSpringCounter simpleSpringCounter = new SimpleSpringCounter();
    private AnnotationConfigApplicationContext ctx;
 
@@ -59,8 +61,9 @@ public class SpringBeanProducer {
    @Produces
    public SimpleSpringCounter simpleCounter() {
       
-      LOGGER.info(() -> this.getClass().getSimpleName() + " producing simpleCounter");
-      return simpleSpringCounter;
+      LOGGER.info(() -> this.getClass().getSimpleName() + " producing simpleCounter");  
+//      return simpleSpringCounter;
+      return ctx.getBean(SimpleSpringCounter.class);
    }
    
    /**

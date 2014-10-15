@@ -23,7 +23,8 @@ import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
 /**
- *
+ * JAX-RS configuration.
+ *  
  * @author Ivar Grimstad <ivar.grimstad@gmail.com>
  */
 @ApplicationPath("api")
