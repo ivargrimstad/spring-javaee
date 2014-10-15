@@ -27,13 +27,14 @@ import java.util.Arrays;
 import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 /**
- *
+ * Awsome counter.
+ * 
  * @author Ivar Grimstad <ivar.grimstad@gmail.com>
  */
-@Component
+@Service
 public class AwsomeSpringCounter {
 
    private static final Logger LOGGER = Logger.getLogger("Spring 4 Component");
@@ -48,6 +49,10 @@ public class AwsomeSpringCounter {
       LOGGER.info(() -> this.getClass().getSimpleName() + " created");
    }
 
+   /**
+    * Increase count.
+    * @return the next number
+    */
    public long next() {
 
       Arrays.asList(appContext.getBeanDefinitionNames()).forEach(n -> LOGGER.info(() -> "Bean: " + n));

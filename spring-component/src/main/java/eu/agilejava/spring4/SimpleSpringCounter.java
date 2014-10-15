@@ -28,7 +28,8 @@ import java.util.logging.Logger;
 import org.springframework.stereotype.Component;
 
 /**
- *
+ * Simple counter.
+ * 
  * @author ivar.grimstad
  */
 @Component
@@ -42,6 +43,10 @@ public class SimpleSpringCounter {
       LOGGER.info(() -> this.getClass().getSimpleName() + " created");
    }
 
+   /**
+    * Increase count.
+    * @return the next number
+    */
    public long next() {
       return counter.incrementAndGet();
    }

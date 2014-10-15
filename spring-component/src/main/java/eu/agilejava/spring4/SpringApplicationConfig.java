@@ -27,7 +27,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
- *
+ * Spring Configuration.
+ * Simple example of annotation based java configuration in Spring.
+ * 
  * @author Ivar Grimstad <ivar.grimstad@gmail.com>
  */
 @Configuration
