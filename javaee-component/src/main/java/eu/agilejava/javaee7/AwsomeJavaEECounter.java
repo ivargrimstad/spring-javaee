@@ -28,7 +28,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 /**
- *
+ * Awsome counter.
  * @author Ivar Grimstad <ivar.grimstad@gmail.com>
  */
 @Stateless
@@ -43,6 +43,10 @@ public class AwsomeJavaEECounter {
       LOGGER.info(() -> this.getClass().getSimpleName() + " created");
    }
 
+   /**
+    * Increases count.
+    * @return the next number
+    */
    public long next() {
       return simpleJavaEECounter.next();
    }

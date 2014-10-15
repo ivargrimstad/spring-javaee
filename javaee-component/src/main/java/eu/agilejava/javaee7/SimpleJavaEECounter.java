@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 import javax.inject.Singleton;
 
 /**
- *
+ * Simple counter.
  * @author Ivar Grimstad (ivar.grimstad@gmail.com)
  */
 @Singleton
@@ -21,6 +21,10 @@ public class SimpleJavaEECounter {
       LOGGER.info(() -> this.getClass().getSimpleName() + " created");
    }
    
+   /**
+    * Increases count.
+    * @return the next number
+    */
    public long next() {
       return counter.incrementAndGet();
    }
