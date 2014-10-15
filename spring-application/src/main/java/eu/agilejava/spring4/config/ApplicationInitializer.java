@@ -28,7 +28,9 @@ import org.springframework.web.context.support.AnnotationConfigWebApplicationCon
 import org.springframework.web.servlet.DispatcherServlet;
 
 /**
- *
+ * Spring configuration.
+ * Equivalent to web.xml by using Java Config.
+ * 
  * @author Ivar Grimstad <ivar.grimstad@gmail.com>
  */
 public class ApplicationInitializer implements WebApplicationInitializer {

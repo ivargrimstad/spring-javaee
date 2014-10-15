@@ -27,7 +27,9 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 /**
- *
+ * Spring configuration.
+ * Example how to manage beans manually by spring.
+ * 
  * @author Ivar Grimstad <ivar.grimstad@gmail.com>
  */
 @Configuration
@@ -35,11 +37,19 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @EnableWebMvc
 public class ApplicationConfig extends WebMvcConfigurerAdapter {
 
+   /**
+    * Produces a spring managed simple counter.
+    * @return simple counter
+    */
    @Bean
    public SimpleJavaEECounter simpleJavaEECounter() {
       return new SimpleJavaEECounter();
    }
    
+   /**
+    * Produces a spring managed awsome counter.
+    * @return awsome counter
+    */
    @Bean
    public AwsomeJavaEECounter awsomeJavaEECounter() {
       return new AwsomeJavaEECounter();
