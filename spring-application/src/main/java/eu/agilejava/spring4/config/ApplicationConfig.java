@@ -20,6 +20,11 @@ package eu.agilejava.spring4.config;
 
 import eu.agilejava.javaee7.AwsomeJavaEECounter;
 import eu.agilejava.javaee7.SimpleJavaEECounter;
+import java.util.logging.Logger;
+import javax.enterprise.context.spi.CreationalContext;
+import javax.enterprise.inject.spi.BeanManager;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -27,31 +32,52 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 /**
- * Spring configuration.
- * Example how to manage beans manually by spring.
- * 
+ * Spring configuration. Example how to manage beans manually by spring.
+ *
  * @author Ivar Grimstad <ivar.grimstad@gmail.com>
  */
 @Configuration
 @ComponentScan("eu.agilejava.spring4")
 @EnableWebMvc
 public class ApplicationConfig extends WebMvcConfigurerAdapter {
+   
+   private static final Logger LOGGER = Logger.getLogger("Spring 4 Application");
 
    /**
     * Produces a spring managed simple counter.
+    *
     * @return simple counter
     */
    @Bean
    public SimpleJavaEECounter simpleJavaEECounter() {
-      return new SimpleJavaEECounter();
+      return getCDIBean(SimpleJavaEECounter.class);
    }
-   
+
    /**
     * Produces a spring managed awsome counter.
+    *
     * @return awsome counter
     */
    @Bean
    public AwsomeJavaEECounter awsomeJavaEECounter() {
       return new AwsomeJavaEECounter();
+   }
+   
+   private <T> T getCDIBean(Class<T> t) {
+      BeanManager bm = getBeanManager();
+      javax.enterprise.inject.spi.Bean<T> bean = (javax.enterprise.inject.spi.Bean<T>) bm.getBeans(t).iterator().next();
+      CreationalContext<T> ctx = bm.createCreationalContext(bean);
+      T cdiBean = (T) bm.getReference(bean, t, ctx);
+      return cdiBean;
+   }
+   
+   private BeanManager getBeanManager() {
+      try {
+         InitialContext initialContext = new InitialContext();
+         return (BeanManager) initialContext.lookup("java:comp/BeanManager");
+      } catch (NamingException e) {
+         LOGGER.severe(() -> "Could not look up initialcontext: " + e.getMessage());
+         return null;
+      }
    }
 }
