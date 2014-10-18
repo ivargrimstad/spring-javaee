@@ -62,8 +62,8 @@ public class SpringBeanProducer {
    public SimpleSpringCounter simpleCounter() {
       
       LOGGER.info(() -> this.getClass().getSimpleName() + " producing simpleCounter");  
-//      return simpleSpringCounter;
-      return ctx.getBean(SimpleSpringCounter.class);
+//      return simpleSpringCounter; // cdi managed
+      return ctx.getBean(SimpleSpringCounter.class); // spring managed
    }
    
    /**
@@ -76,7 +76,7 @@ public class SpringBeanProducer {
    public AwsomeSpringCounter awsomeCounter() {
 
       LOGGER.info(() -> this.getClass().getSimpleName() + " producing awsomeCounter");
-      return ctx.getBean(AwsomeSpringCounter.class);
+      return ctx.getBean(AwsomeSpringCounter.class); // spring managed
    }
 
    @PostConstruct
