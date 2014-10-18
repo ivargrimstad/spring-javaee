@@ -40,7 +40,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @ComponentScan("eu.agilejava.spring4")
 @EnableWebMvc
 public class ApplicationConfig extends WebMvcConfigurerAdapter {
-   
+
    private static final Logger LOGGER = Logger.getLogger("Spring 4 Application");
 
    /**
@@ -50,7 +50,8 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter {
     */
    @Bean
    public SimpleJavaEECounter simpleJavaEECounter() {
-      return getCDIBean(SimpleJavaEECounter.class);
+//      return new SimpleJavaEECounter(); // spring managed
+      return getCDIBean(SimpleJavaEECounter.class); // cdi managed
    }
 
    /**
@@ -60,18 +61,27 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter {
     */
    @Bean
    public AwsomeJavaEECounter awsomeJavaEECounter() {
-      return new AwsomeJavaEECounter();
+      // spring managed
+      return new AwsomeJavaEECounter(); // spring managed
+//      return getCDIBean(AwsomeJavaEECounter.class); // cdi managed
    }
-   
+
+   /**
+    * Retrieves a CDI managed bean.
+    * @param <T> Type of the managed bean
+    * @param t the class of the managed bean
+    * @return the managed bean
+    */
    private <T> T getCDIBean(Class<T> t) {
-      BeanManager bm = getBeanManager();
-      javax.enterprise.inject.spi.Bean<T> bean = (javax.enterprise.inject.spi.Bean<T>) bm.getBeans(t).iterator().next();
+      BeanManager bm = getCDIBeanManager();
+      javax.enterprise.inject.spi.Bean<T> bean
+              = (javax.enterprise.inject.spi.Bean<T>) bm.getBeans(t).iterator().next();
       CreationalContext<T> ctx = bm.createCreationalContext(bean);
       T cdiBean = (T) bm.getReference(bean, t, ctx);
       return cdiBean;
    }
-   
-   private BeanManager getBeanManager() {
+
+   private BeanManager getCDIBeanManager() {
       try {
          InitialContext initialContext = new InitialContext();
          return (BeanManager) initialContext.lookup("java:comp/BeanManager");
