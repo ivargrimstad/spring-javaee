@@ -81,6 +81,10 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter {
       return cdiBean;
    }
 
+   /**
+    * Get the CDI Manager from initial context.
+    * @return the cdi manager
+    */
    private BeanManager getCDIBeanManager() {
       try {
          InitialContext initialContext = new InitialContext();
