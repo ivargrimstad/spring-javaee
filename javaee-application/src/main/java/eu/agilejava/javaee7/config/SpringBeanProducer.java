@@ -28,8 +28,8 @@ import eu.agilejava.spring4.AwsomeSpringCounter;
 import eu.agilejava.spring4.SimpleSpringCounter;
 import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;
-import javax.inject.Singleton;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -38,7 +38,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  * 
  * @author ivar.grimstad <ivar.grimstad@gmail.com>
  */
-@Singleton
+@ApplicationScoped
 public class SpringBeanProducer {
 
    private static final Logger LOGGER = Logger.getLogger("Java EE 7 Application");
