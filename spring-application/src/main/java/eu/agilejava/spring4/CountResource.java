@@ -47,8 +47,9 @@ public class CountResource {
    @Autowired
    private SimpleJavaEECounter simpleJavaEECounter;
    
+   @EJB
 //   @Autowired
-   @EJB(mappedName = "java:module/AwsomeJavaEECounter")
+//   @EJB(mappedName = "java:module/AwsomeJavaEECounter")
    private AwsomeJavaEECounter awsomeJavaEECounter;
 
    @RequestMapping(value = "/count", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)

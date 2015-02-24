@@ -61,9 +61,8 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter {
     */
    @Bean
    public AwsomeJavaEECounter awsomeJavaEECounter() {
-      // spring managed
-      return new AwsomeJavaEECounter(); // spring managed
-//      return getCDIBean(AwsomeJavaEECounter.class); // cdi managed
+//      return new AwsomeJavaEECounter(); // spring managed
+      return getCDIBean(AwsomeJavaEECounter.class); // cdi managed
    }
 
    /**
