@@ -4,13 +4,13 @@ package eu.agilejava.javaee7;
 
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Logger;
-import javax.inject.Singleton;
+import javax.enterprise.context.ApplicationScoped;
 
 /**
  * Simple counter.
  * @author Ivar Grimstad (ivar.grimstad@gmail.com)
  */
-@Singleton
+@ApplicationScoped
 public class SimpleJavaEECounter {
    
    private static final Logger LOGGER = Logger.getLogger("Jave EE 7 Component");
